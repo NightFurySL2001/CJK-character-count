@@ -25,8 +25,12 @@ This program accepts 1 font file at a time (OpenType/TrueType single font file c
 `main.py` 为英文版，`main-chi.py` 为中文版。
 
 ## Dependencies 依赖部件
-* `tkinter` for display (non-commercial use, should be removed and replaced in next version. 显示使用`tkinter`，应在未来移除此部件。
+* `tkinter` 
+** For software display. Non-commercial use module, should be removed and replaced in next version. `tkinter`以显示软件。非商用模块，应在未来移除与替换该模块。
 * [`fontTools`](https://github.com/fonttools/fonttools)
+** Extract `cmap` table. 提取 `cmap` 表。
+* [`pyinstaller`](https://github.com/pyinstaller/pyinstaller)
+** Build executable for Windows in [release](). 编译软件成可执行软件。于[发布版]()内提供 Windows 版本。
 
 ## Changelog 更新日志
 Refer to [readme.txt](readme.txt). 参考[readme.txt](readme.txt)。
