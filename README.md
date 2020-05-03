@@ -34,7 +34,7 @@ This program accepts 1 font file at a time (OpenType/TrueType single font file c
 
 `main.py` 为英文版，`main-chi.py` 为中文版。
 
-## Dependencies 依赖部件
+## Dependencies 依赖模块
 
 * `tkinter` 
 
