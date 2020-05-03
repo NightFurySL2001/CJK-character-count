@@ -44,7 +44,7 @@ This program accepts 1 font file at a time (OpenType/TrueType single font file c
 
 * `tkinter` 
 
-  For software display. Non-commercial use module, should be removed and replaced in next version. `tkinter`以显示软件。非商用模块，应在未来移除与替换该模块。
+  For software display. Non-commercial use module, should be removed and replaced in next version. 使用于软件显示。非商用模块，应在未来移除与替换该模块。
 * [`fontTools`](https://github.com/fonttools/fonttools)
 
   Extract `cmap` table. 提取 `cmap` 表。
