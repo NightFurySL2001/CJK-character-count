@@ -12,7 +12,7 @@ This program accepts 1 font file at a time (OpenType/TrueType single font file c
 
 此软件可计算一套字体内的汉字数量，目前只限OpenType/TrueType单字体文件而已。导入字体时，软件将从`cmap`表（储存字体内（十进制）统一码与字符对应的表）提取汉字列表，然后以该列表依统一码区块（比对十六进制码位）与汉字编码标准（比对 .txt文件）统计字体内的汉字数量。
 
-## Currently supported encoding standard/standardization list 支援的编码标准
+## Currently supported encoding standard/standardization list 支援的编码标准／汉字表
 * [GB/T 2312](https://en.wikipedia.org/wiki/GB_2312)
 * [GB/T 12345](https://zh.wikipedia.org/wiki/GB_12345)
 * [GBK](https://en.wikipedia.org/wiki/GBK_(character_encoding)) 
