@@ -33,6 +33,6 @@ Refer to [readme.txt](). 参考[readme.txt]()。
 
 ___
 
-This program is requested by [MaoKen](maoken.com). Visit their site to see this in action.
+This program is requested by [MaoKen](http://www.maoken.com/). Visit their site to see this in action.
 
-此软件由[猫啃网](maoken.com)要求。浏览该网址以查看使用方式。
+此软件由[猫啃网](http://www.maoken.com/)要求。浏览该网址以查看使用方式。
