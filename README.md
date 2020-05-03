@@ -29,7 +29,7 @@ This program accepts 1 font file at a time (OpenType/TrueType single font file c
 * [`fontTools`](https://github.com/fonttools/fonttools)
 
 ## Changelog 更新日志
-Refer to [readme.txt](). 参考[readme.txt]()。
+Refer to [readme.txt](readme.txt). 参考[readme.txt](readme.txt)。
 
 ___
 
