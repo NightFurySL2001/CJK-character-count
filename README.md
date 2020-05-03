@@ -5,7 +5,7 @@ This is a program that counts the amount of CJK characters based on Unicode rang
 ___
 
 ## How this works 如何运作
-This program accepts 1 font file at a time (OpenType/TrueType single font file currently) and extract the character list from `cmap` table, which records the Unicode (base-10)-glyph shape for a font. The list is then parsed to count the amount of characters based on Unicode ranges (comparing the hexadecimal range) and Chinese encoding standards (given a list of .txt files with the actual character in it). 
+This program accepts 1 font file at a time (OpenType/TrueType single font file currently) and extract the character list from `cmap` table, which records the Unicode (base-10)-glyph shape for a font. The list is then parsed to count the amount of characters based on Unicode ranges (comparing the hexadecimal range) and Chinese encoding standards (given a list of .txt files with the actual character in it).
 此软件可计算一套字体内的汉字数量，目前只限OpenType/TrueType单字体文件而已。导入字体时，软件将从`cmap`表（储存字体内（十进制）统一码与字符对应的表）提取汉字列表，然后以该列表依统一码区块（比对十六进制码位）与汉字编码标准（比对 .txt文件）统计字体内的汉字数量。
 
 ## Currently supported encoding standard/standardization list 支援的编码标准
@@ -17,6 +17,10 @@ This program accepts 1 font file at a time (OpenType/TrueType single font file c
 * [3500 Commonly Used Chinese Characters/3500字常用汉字表](https://github.com/kaienfr/Font/blob/master/learnfiles/%E5%B8%B8%E7%94%A8%E6%B1%89%E5%AD%97%E5%BA%93%203500.txt) \**Important: Source is not yet determined, may be renamed or removed in future. 注：未知来源，可能在未来重命名或移除。*
 * [Big5/五大码](https://en.wikipedia.org/wiki/Big5)
 * [Hong Kong Supplementary Character Set (HKSCS)/香港增补字符集](https://en.wikipedia.org/wiki/Hong_Kong_Supplementary_Character_Set)
+
+## Software interface 软件界面
+`main.py` is the English version, `main-chi.py` is the modified Chinese version.
+`main.py` 为英文版，`main-chi.py` 为中文版。
 
 ## Dependencies 依赖部件
 * `tkinter` for display (non-commercial use, should be removed and replaced in next version. 显示使用`tkinter`，应在未来移除此部件。
