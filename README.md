@@ -36,9 +36,12 @@ This program accepts 1 font file at a time (OpenType/TrueType single font file c
 
 ## Software interface 软件界面
 
-`main.py` is the English version, `main-chi.py` is the modified Chinese version.
+`main.exe` is the English version, `main-chi.exe` is the modified Chinese version.
 
-`main.py` 为英文版，`main-chi.py` 为中文版。
+`main.exe` 为英文版，`main-chi.exe` 为中文版。
+
+![IPAmj English Sample](resource/ipamjm.ttf-sample-en.jpg?s=250)
+![IPAmj Chinese Sample](resource/ipamjm.ttf-sample-zh.jpg?s=250)
 
 ## Dependencies 依赖模块
 
