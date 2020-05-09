@@ -40,8 +40,8 @@ This program accepts 1 font file at a time (OpenType/TrueType single font file c
 
 `main.exe` 为英文版，`main-chi.exe` 为中文版。
 
-![IPAmj English Sample](resource/ipamjm.ttf-sample-en.jpg | width=350)
-![IPAmj Chinese Sample](resource/ipamjm.ttf-sample-zh.jpg | width=350)
+![IPAmj English Sample](resource/ipamjm.ttf-sample-en.jpg =250x)
+![IPAmj Chinese Sample](resource/ipamjm.ttf-sample-zh.jpg =250x)
 
 ## Dependencies 依赖模块
 
