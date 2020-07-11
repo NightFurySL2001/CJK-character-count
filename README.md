@@ -28,8 +28,14 @@ This program accepts 1 font file at a time (OpenType/TrueType single font file c
 * [Table of General Standard Chinese Characters/通用规范汉字表](https://en.wikipedia.org/wiki/Table_of_General_Standard_Chinese_Characters)
 * [3500 Commonly Used Chinese Characters/3500字常用汉字表](https://github.com/kaienfr/Font/blob/master/learnfiles/%E5%B8%B8%E7%94%A8%E6%B1%89%E5%AD%97%E5%BA%93%203500.txt)
 
-  \**Important: Source is not yet determined, may be renamed or removed in future. 
-  注：未知来源，可能在未来重命名或移除。*
+  \**Note: Official name is Xiandai Hanyu Changyong Zibiao. May be renamed in future version.
+  注：官方文档名为《现代汉语常用字表》。未来可能会更换名称。*
+
+* [台湾教育部常用字表](https://zh.wikipedia.org/wiki/%E5%B8%B8%E7%94%A8%E5%9C%8B%E5%AD%97%E6%A8%99%E6%BA%96%E5%AD%97%E9%AB%94%E8%A1%A8)
+* [台湾教育部次常用字表](https://zh.wikipedia.org/wiki/%E5%B8%B8%E7%94%A8%E5%9C%8B%E5%AD%97%E6%A8%99%E6%BA%96%E5%AD%97%E9%AB%94%E8%A1%A8)
+
+   \**Note: Source file from [Chinese Useful ToolKit](https://www.github.com/Watermelonnn/ChineseUsefulToolKit) by Watermelonnn.
+   注：字表来源为Watermelonnn [Chinese Useful ToolKit](https://www.github.com/Watermelonnn/ChineseUsefulToolKit)。*
 
 * [Big5/五大码](https://en.wikipedia.org/wiki/Big5)
 * [Hong Kong Supplementary Character Set (HKSCS)/香港增补字符集](https://en.wikipedia.org/wiki/Hong_Kong_Supplementary_Character_Set)
