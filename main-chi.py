@@ -12,7 +12,7 @@ main = Tk()
 #set title
 main.title("字体计数软件")
 #window size
-main.geometry('1020x620')
+main.geometry('1020x680')
 #prepare font
 title_font=("Microsoft YaHei UI",16, "bold underline")
 text_font=("Microsoft YaHei UI",13)

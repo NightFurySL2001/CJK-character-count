@@ -20,40 +20,35 @@ def count_char(char_list):
         if encoding != "gb18030":
             cjk_dict[encoding] = load_sample_file(encoding+"-han.txt")
         cjk_char_count[encoding]=0
-         
+        
+    #row[0] is unicode in decimal, row[1] is gid (could not use for CID mapping), row[2] is unicode name
     for row in char_list:
+        current_uni_dec_value = row[0]
+        
         #check for duplicate as all `cmap` table are exported for all platform
-        if row[0] not in lines_seen:
-            lines_seen.append(row[0])
-            #add cjk character for cjk encoding check
-            if row[2][:3] == "CJK":
-                #take character id and turn to hex for future update
-                font_uni_list.append(hex(row[0]))
-
-            #count kangxi radical
-            #if row[2][:6] == "KANGXI": #2F00 — 2FDF Kangxi Radicals
-            #    unicode_char_count["kangxi"]+=1
+        if current_uni_dec_value not in lines_seen:
+            lines_seen.append(current_uni_dec_value)
 
             #check range with base 10 unicode and count by range
-            range = uni_range_check(row[0])
-            #if range is defined by function (cjk only)
+            range = uni_range_check(current_uni_dec_value)
+            #if character is in cjk range
             if range:
+                #count unicode range
                 unicode_char_count[range]+=1
 
+                #cjk encoding is only count if it is in cjk range of unicode
+                #get real character
+                char = chr(current_uni_dec_value)
+                #filter and count cjk
+                for encoding in global_var.cjk_list:
+                    #gb18030 no file list
+                    if encoding == "gb18030":
+                        continue
+                    if char in cjk_dict[encoding]:
+                        cjk_char_count[encoding]+=1
+        
         #if already saw, skip it
         continue
-
-    #process each uniqued named CJK character
-    for char_num in font_uni_list:
-        #get real character
-        char = chr(deci(char_num))
-        #filter and count cjk
-        for encoding in global_var.cjk_list:
-            #gb18030 no file list
-            if encoding == "gb18030":
-                continue
-            if char in cjk_dict[encoding]:
-                cjk_char_count[encoding]+=1
     
     #gb18030 mandatory CJK Unified Ideographs and CJK Unified Ideographs Extension A
     cjk_char_count["gb18030"]=unicode_char_count["basic"]+unicode_char_count["ext-a"]

@@ -12,7 +12,7 @@ main = Tk()
 #set title
 main.title("Font Character Count")
 #window size
-main.geometry('500x700')
+main.geometry('500x750')
 
 output_text=StringVar(main)
 
@@ -37,16 +37,19 @@ cjk_lbl={}
 cjk_empty={}
 cjk_count={}
 cjk_var={}
+cjk_start=3
 #listing with cjk encoding
 for i, (cjk_enc, cjk_enc_name) in enumerate(global_var.cjk_list.items()):
     cjk_var[cjk_enc] = StringVar()
-    cjk_lbl[cjk_enc] = Label(main, text=cjk_enc_name+":", justify="left").grid(column=0, row=i+3, sticky=W, padx=12)
-    cjk_empty[cjk_enc] = Label(main, textvariable=cjk_var[cjk_enc], justify="left").grid(column=1, row=i+3)
-    cjk_count[cjk_enc] = Label(main, text="/"+str(global_var.cjk_count[cjk_enc]), justify="left").grid(column=2, row=i+3, sticky=W)
+    cjk_lbl[cjk_enc] = Label(main, text=cjk_enc_name+":", justify="left").grid(column=0, row=i+cjk_start, sticky=W, padx=12)
+    cjk_empty[cjk_enc] = Label(main, textvariable=cjk_var[cjk_enc], justify="left").grid(column=1, row=i+cjk_start)
+    cjk_count[cjk_enc] = Label(main, text="/"+str(global_var.cjk_count[cjk_enc]), justify="left").grid(column=2, row=i+cjk_start, sticky=W)
+    unicode_start=cjk_start+i
 
+unicode_start+=1
 #section 2: unicode section
 unicode_lbl = Label(main, text="Unicode Sector", font=my_font)
-unicode_lbl.grid(column=0, row=12)
+unicode_lbl.grid(column=0, row=unicode_start)
 unicode_lbl={}
 unicode_empty={}
 unicode_count={}
@@ -54,9 +57,9 @@ unicode_var={}
 #listing with unicode area
 for i, (unicode_enc, unicode_enc_name) in enumerate(global_var.unicode_list.items()):
     unicode_var[unicode_enc] = StringVar()
-    unicode_lbl[unicode_enc] = Label(main, text=unicode_enc_name+":", justify="left").grid(column=0, row=i+13, sticky=W, padx=12)
-    unicode_empty[unicode_enc] = Label(main, textvariable=unicode_var[unicode_enc], justify="left").grid(column=1, row=i+13)
-    unicode_count[unicode_enc] = Label(main, text="/"+str(global_var.unicode_count[unicode_enc]), justify="left").grid(column=2, row=i+13, sticky=W)
+    unicode_lbl[unicode_enc] = Label(main, text=unicode_enc_name+":", justify="left").grid(column=0, row=i+unicode_start+1, sticky=W, padx=12)
+    unicode_empty[unicode_enc] = Label(main, textvariable=unicode_var[unicode_enc], justify="left").grid(column=1, row=i+unicode_start+1)
+    unicode_count[unicode_enc] = Label(main, text="/"+str(global_var.unicode_count[unicode_enc]), justify="left").grid(column=2, row=i+unicode_start+1, sticky=W)
 
 
 #open file react function
