@@ -15,6 +15,8 @@ cjk_list = {"gb2312":"GB/T 2312",
             "gb18030":"GB 18030",
             "tongyong-guifan":"通用规范汉字表",
             "3500changyong":"3500 字常用汉字表",
+            "4808changyong":"台湾教育部常用字",
+            "6341cichangyong":"台湾教育部次常用字",
             "big5":"五大码",
             "hkscs":"香港增补字符集"
            }
@@ -39,6 +41,8 @@ cjk_count = {"gb2312":6763,
             "gb18030":27581,
             "tongyong-guifan":8105,
             "3500changyong":3500,
+            "4808changyong":4808,
+            "6341cichangyong":6341,
             "big5":13058,
             "hkscs":4640
            }
@@ -64,7 +68,9 @@ cjk_jian_list = {"gb2312":"GB/T 2312",
 cjk_jian_fan_list = {"gbk":"GBK",
                      "gb18030":"GB 18030"
                     }
-cjk_fan_list = {"gb12345":"GB/T 12345",
+cjk_fan_list = {"4808changyong":"台湾教育部常用字",
+                "6341cichangyong":"台湾教育部次常用字",
+                "gb12345":"GB/T 12345",
                 "big5":"五大码 (Big5)",
                 "hkscs":"香港增补字符集 (HKSCS)"
                }
