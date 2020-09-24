@@ -59,9 +59,9 @@ This program accepts 1 font file at a time (OpenType/TrueType single font file c
 
 `main.exe` 为英文版，`main-zhs.exe` 为中文版。
 
-<img src="https://raw.githubusercontent.com/NightFurySL2001/CJK-character-count/master/resource/jf-openhuninn-1.1.ttf-sample-en.jpg" height="400" >
+<img src="https://raw.githubusercontent.com/NightFurySL2001/CJK-character-count/master/resource/jf-openhuninn-1.1.ttf-sample-en.png" height="400" >
 
-<img src="https://raw.githubusercontent.com/NightFurySL2001/CJK-character-count/master/resource/jf-openhuninn-1.1.ttf-sample-zh.jpg" width="500" >
+<img src="https://raw.githubusercontent.com/NightFurySL2001/CJK-character-count/master/resource/jf-openhuninn-1.1.ttf-sample-zh.png" width="500" >
 
 ## Dependencies 依赖模块
 
