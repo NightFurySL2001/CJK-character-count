@@ -8,19 +8,14 @@ def count_char(char_list):
     font_uni_list = []
     font_list = []
     unicode_char_count={}
+
     #prepare unicode area count storage
     for item in global_var.unicode_list:
         unicode_char_count[item]=0
-    
-    #get cjk encoding character list
-    cjk_dict = {}
-    cjk_char_count = {}
+    #prepare cjk encoding count storage, moved extracting text from txt to main code bottom
     for encoding in global_var.cjk_list:
-        #gb18030 no file list
-        if encoding != "gb18030":
-            cjk_dict[encoding] = load_sample_file(encoding+"-han.txt")
         cjk_char_count[encoding]=0
-        
+
     #row[0] is unicode in decimal, row[1] is gid (could not use for CID mapping), row[2] is unicode name
     for row in char_list:
         current_uni_dec_value = row[0]
@@ -46,12 +41,12 @@ def count_char(char_list):
                         continue
                     if char in cjk_dict[encoding]:
                         cjk_char_count[encoding]+=1
-        
+
         #if already saw, skip it
         continue
-    
+
     #gb18030 mandatory CJK Unified Ideographs and CJK Unified Ideographs Extension A
-    cjk_char_count["gb18030"]=unicode_char_count["basic"]+unicode_char_count["ext-a"]
+    cjk_char_count["gb18030"]=unicode_char_count["basic"]+unicode_char_count["ext-a"]+unicode_char_count["zero"]
     #print(unicode_char_count["ext-g"])
     return (cjk_char_count, unicode_char_count)
 
@@ -61,7 +56,7 @@ def count_char(char_list):
 def load_sample_file(filename):
     font_list = []
     for line in open(filename, "r", encoding="utf-8"):
-        font_list.append(line.strip("\r\n"))
+        font_list.append(line.strip("\r\n").strip(" "))
     return font_list
 
 #conversion to base 10, return 0 if failed
@@ -80,6 +75,8 @@ def uni_range_check(char_base10):
         return "kangxi"
     elif char_base10 in range(deci("2E80"), deci("2EFF")): #2E80 — 2EFF CJK Radical Supplements
         return "kangxi-sup"
+    elif char_base10 == 12295: # U+3007 Ideographic Number Zero Unicode Character
+        return "zero"
     elif char_base10 in range(deci("3400"), deci("4DBF")): #3400 — 4DBF CJK Unified Ideographs Extension A
         return "ext-a"
     elif char_base10 in range(deci("F900"), deci("FAFF")): #F900 — FAFF CJK Compatibility Ideographs
@@ -98,3 +95,14 @@ def uni_range_check(char_base10):
         return "compat-sup"
     elif char_base10 in range(deci("30000"), deci("3134F")): #30000 - 3134F CJK Unified Ideographs Extension G
         return "ext-g"
+        
+
+#get cjk encoding character list from txt files
+cjk_dict = {}
+cjk_char_count = {}
+for encoding in global_var.cjk_list:
+    #gb18030 no file list
+    if encoding == "gb18030":
+        continue
+    cjk_dict[encoding] = load_sample_file(encoding+"-han.txt")
+    cjk_char_count[encoding]=0

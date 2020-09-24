@@ -1,7 +1,20 @@
 Made by NightFurySL2001 / 夜煞之乐2001
 
-2020-06-23
-Taiwan Changyong, Cichangyong added, refactor loops to decrease loops.
+2020-09-24 v0.10
+Taiwan Cichangyong removed due to lack of standard character table
+Xiandai Hanyu Tongyong Zibiao, Yiwu Jiaoyu Zibiao, BIG5 Common Character Set added
+Source of 3500 Changyong Zibiao renamed to Xiandai Hanyu Changyong Zibiao
+Taiwan Changyong renamed to Table of Standard Form of Commonly Used National Characters
+Fixed errors in HKSCS
+Add U+3007 Ideographic Number Zero Unicode Character to Unicode list
+Reset count to 0 if new font loaded
+Increased Chinese interface font size
+Rename -chi to -zhs (Simplified)
+Created logo
+
+2020-06-23 v0.04
+Taiwan Changyong, Cichangyong added
+Refactor loops to decrease loops
 Source of 3500 Changyong Zibiao checked, may rename to Xiandai Hanyu Changyong Zibiao
 Official name to CJK-character-count
 
