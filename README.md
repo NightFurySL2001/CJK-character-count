@@ -55,9 +55,9 @@ This program accepts 1 font file at a time (OpenType/TrueType single font file c
 
 ## Software interface 软件界面
 
-`main.exe` is the English version, `main-zhs.exe` is the modified Chinese version.
+`main.exe` is the English version, `main-zhs.exe` is the Chinese (Simplified) version, `main-zht.exe` is the Chinese (Traditional) version.
 
-`main.exe` 为英文版，`main-zhs.exe` 为中文版。
+`main.exe` 为英文版，`main-zhs.exe` 为简体中文版，`main-zht.exe` 为繁体中文版。
 
 <img src="https://raw.githubusercontent.com/NightFurySL2001/CJK-character-count/master/resource/jf-openhuninn-1.1.ttf-sample-en.png" height="400" >
 
@@ -73,6 +73,10 @@ This program accepts 1 font file at a time (OpenType/TrueType single font file c
   Extract `cmap` table.  
   提取 `cmap` 表。
 
+* [`pyglet`](http://pyglet.org/)  
+  ZHT only: Set the GUI Font to custom font ([Genyog](https://github.com/buttaiwan/genyog-font)).
+  繁中版：设置界面字体为自定义字体（[源样黑体](https://github.com/buttaiwan/genyog-font)）。
+
 * [`pyinstaller`](https://github.com/pyinstaller/pyinstaller)  
   Build executable for Windows in [release](https://github.com/NightFurySL2001/CJK-character-count/releases/latest).  
   编译软件成可执行软件。[发布版](https://github.com/NightFurySL2001/CJK-character-count/releases/latest)内提供 Windows 版本。
@@ -85,8 +89,8 @@ Please install [latest version of Python 3](https://www.python.org/downloads/).
 
 ### Dependencies 安装依赖模块
 ```
-pip3 install tkinter
 pip3 install fonttools
+pip3 install pyglet
 pip3 install pyinstaller
 ```
 
@@ -99,6 +103,7 @@ Download the required `.spec` files from [release](https://github.com/NightFuryS
 // To build single language
 pyinstaller main.spec
 pyinstaller main-zhs.spec
+pyinstaller main-zht.spec
 
 // To build full folder, use the provided .bat file
 .\batch.bat
