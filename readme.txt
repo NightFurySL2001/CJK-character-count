@@ -1,5 +1,13 @@
 Made by NightFurySL2001 / 夜煞之乐2001
 
+2020-10-03 v0.11
+Add TTC processing
+Add more vigorous checking of font file
+Fix range bug
+More complete localization of Chinese interface
+Localization of Chinese (Traditional) interface
+Change English interface to the same as Chinese because list too long
+
 2020-09-24 v0.10
 Taiwan Cichangyong removed due to lack of standard character table
 Xiandai Hanyu Tongyong Zibiao, Yiwu Jiaoyu Zibiao, BIG5 Common Character Set added
