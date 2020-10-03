@@ -5,6 +5,8 @@ This is a program that counts the amount of CJK characters based on Unicode rang
 
 此软件以统一码（Unicode）区块与汉字编码标准统计字体内的汉字数量。
 
+**[Download here. 在此下载。](https://github.com/NightFurySL2001/CJK-character-count/releases)**
+
 ___
 
 ## How this works 如何运作
@@ -12,6 +14,14 @@ ___
 This program accepts 1 font file at a time (OpenType/TrueType single font file currently) and extract the character list from `cmap` table, which records the Unicode (base-10)-glyph shape for a font. The list is then parsed to count the amount of characters based on Unicode ranges (comparing the hexadecimal range) and Chinese encoding standards (given a list of .txt files with the actual character in it).
 
 此软件可计算一套字体内的汉字数量，目前只限OpenType/TrueType单字体文件而已。导入字体时，软件将从`cmap`表（储存字体内（十进制）统一码与字符对应的表）提取汉字列表，然后以该列表依统一码区块（比对十六进制码位）与汉字编码标准（比对 .txt文件）统计字体内的汉字数量。
+
+## Currently supported font formats 支援的字体格式
+
+Major font formats are supported in this software.
+
+主要字体格式本软件皆都支援。
+
+` *.ttf, *.otf, *.woff, *.woff2, *.ttc, *.otc`
 
 ## Currently supported encoding standard/standardization list 支援的编码标准／汉字表
 
@@ -55,9 +65,9 @@ This program accepts 1 font file at a time (OpenType/TrueType single font file c
 
 ## Software interface 软件界面
 
-`main.exe` is the English version, `main-zhs.exe` is the modified Chinese version.
+`main.exe` is the English version, `main-zhs.exe` is the Chinese (Simplified) version, `main-zht.exe` is the Chinese (Traditional) version.
 
-`main.exe` 为英文版，`main-zhs.exe` 为中文版。
+`main.exe` 为英文版，`main-zhs.exe` 为简体中文版，`main-zht.exe` 为繁体中文版。
 
 <img src="https://raw.githubusercontent.com/NightFurySL2001/CJK-character-count/master/resource/jf-openhuninn-1.1.ttf-sample-en.png" height="400" >
 
@@ -73,6 +83,10 @@ This program accepts 1 font file at a time (OpenType/TrueType single font file c
   Extract `cmap` table.  
   提取 `cmap` 表。
 
+* [`pyglet`](http://pyglet.org/)  
+  ZHT only: Set the GUI Font to custom font ([Genyog](https://github.com/buttaiwan/genyog-font)).  
+  繁中版：设置界面字体为自定义字体（[源样黑体](https://github.com/buttaiwan/genyog-font)）。
+
 * [`pyinstaller`](https://github.com/pyinstaller/pyinstaller)  
   Build executable for Windows in [release](https://github.com/NightFurySL2001/CJK-character-count/releases/latest).  
   编译软件成可执行软件。[发布版](https://github.com/NightFurySL2001/CJK-character-count/releases/latest)内提供 Windows 版本。
@@ -85,8 +99,8 @@ Please install [latest version of Python 3](https://www.python.org/downloads/).
 
 ### Dependencies 安装依赖模块
 ```
-pip3 install tkinter
 pip3 install fonttools
+pip3 install pyglet
 pip3 install pyinstaller
 ```
 
@@ -99,11 +113,15 @@ Download the required `.spec` files from [release](https://github.com/NightFuryS
 // To build single language
 pyinstaller main.spec
 pyinstaller main-zhs.spec
+pyinstaller main-zht.spec
 
 // To build full folder, use the provided .bat file
 .\batch.bat
 ```
 
+## To-do 待办事项
+
+* Redesign GUI with [Kivy](https://kivy.org/).
 
 ## Changelog 更新日志
 
