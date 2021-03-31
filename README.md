@@ -28,7 +28,9 @@ Major font formats are supported in this software.
 ### Encoding standard 编码标准
 * [GB/T 2312](https://en.wikipedia.org/wiki/GB_2312)
 
-* [GB/T 12345](https://zh.wikipedia.org/wiki/GB_12345)
+* [GB/T 12345](https://zh.wikipedia.org/wiki/GB_12345)  
+  \**Note: Source file from [character_set](https://gitlab.com/mrhso/character_set/-/blob/master/GB12345.txt) by @mrhso.  
+  注：字表来源为 @mrhso [character_set](https://gitlab.com/mrhso/character_set/-/blob/master/GB12345.txt)。*
 
 * [GBK](https://en.wikipedia.org/wiki/GBK_(character_encoding))  
   \**Note: Private Use Area (PUA) characters are removed and not counted, resulting in 20923 characters.  
@@ -56,12 +58,16 @@ Major font formats are supported in this software.
 
 * [List of Frequently Used Characters of Compulsory Education/义务教育语文课程常用字表](https://old.pep.com.cn/xiaoyu/jiaoshi/tbjx/kbjd/kb2011/201202/t20120206_1099050.htm)
 
-* [Table of Standard Form of Frequently Used National Characters/常用国字标准字体表](https://zh.wikipedia.org/wiki/%E5%B8%B8%E7%94%A8%E5%9C%8B%E5%AD%97%E6%A8%99%E6%BA%96%E5%AD%97%E9%AB%94%E8%A1%A8)  
+* [Table of Standard Form of Frequently Used National Characters/常用國字標準字體表](https://zh.wikipedia.org/wiki/%E5%B8%B8%E7%94%A8%E5%9C%8B%E5%AD%97%E6%A8%99%E6%BA%96%E5%AD%97%E9%AB%94%E8%A1%A8)  
   \**Note: Source file from [Chinese Useful ToolKit](https://www.github.com/Watermelonnn/ChineseUsefulToolKit) by Watermelonnn. Old name in this software was 《台湾教育部常用字表》.  
   注：字表来源为Watermelonnn [Chinese Useful ToolKit](https://www.github.com/Watermelonnn/ChineseUsefulToolKit)。旧版软件内名称为《台湾教育部常用字表》。*
 
+* [Hong Kong Supplementary Character Set/香港增補字符集](https://zh.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF%E5%A2%9E%E8%A3%9C%E5%AD%97%E7%AC%A6%E9%9B%86)  
+
+* [Supplementary Character Set (suppchara, level 1-6)/常用香港外字表（1-6级）](https://github.com/ichitenfont/suppchara)  
+
 > 《台湾教育部次常用字表》 which was introduced in v0.04 is removed due to lack of standard character table.  
-> 于v0.04版加入的《台湾教育部次常用字表》（正名：《次常用国字标准字体表》）因缺乏标准化字符字表而被移除。
+> 于v0.04版加入的《台湾教育部次常用字表》（正名：《次常用國字標準字體表》）因缺乏标准化字符字表而被移除。
 
 ## Software interface 软件界面
 
@@ -90,6 +96,12 @@ Major font formats are supported in this software.
 * [`pyinstaller`](https://github.com/pyinstaller/pyinstaller)  
   Build executable for Windows in [release](https://github.com/NightFurySL2001/CJK-character-count/releases/latest).  
   编译软件成可执行软件。[发布版](https://github.com/NightFurySL2001/CJK-character-count/releases/latest)内提供 Windows 版本。
+  
+##  License 授权
+
+This software is licensed under [MIT License](https://opensource.org/licenses/MIT). Details of the license can be found in the [accompanying `LICENSE` file](LICENSE).
+
+本软件以 [MIT 授权条款](https://opensource.org/licenses/MIT)发布。授权详情可在[随附的 `LICENSE` 文件内](LICENSE)查阅。
 
 ## To build 如何构建
 
