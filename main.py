@@ -7,6 +7,9 @@ import count_char
 import global_var
 import ttc_get
 import ntpath
+#drag and drop
+import sys
+first_time = True
 
 #start window
 main = Tk()
@@ -16,7 +19,8 @@ main.title("Font Character Count")
 main.geometry('')
 #prepare font
 title_font=("Segoe UI", 12, "bold underline")
-text_font=("Segoe UI",12)
+text_font=("Segoe UI", 12)
+text_sum_font=("Segoe UI", 12, "bold")
 #add frame
 frame = Frame(main)
 frame.pack(padx=(25,40), pady=(0,30))
@@ -27,7 +31,7 @@ current_lang="en"
 #text label + button
 input_lbl = Label(frame, text="Choose font file:　　　　", font=text_font)
 input_lbl.grid(column=0, row=0, sticky=E)
-btn = Button(frame, text ='Open', font=text_font, command = lambda:open_file() )
+btn = Button(frame, text ='Open', font=text_font, command = lambda:open_file(None) ) #just send None as no drag and drop file
 btn.grid(column=0, row=0, sticky=E)
 
 #show file name
@@ -82,7 +86,7 @@ for i, (cjk_enc, cjk_enc_name) in enumerate(global_var.cjk_fan_list_en.items()):
 
 
 #section 2: unicode section
-unicode_lbl = Label(frame, text="Unicode Sectors", font=title_font)
+unicode_lbl = Label(frame, text="Unicode Blocks", font=title_font)
 unicode_lbl.grid(column=3, row=2, sticky=W, padx=5)
 unicode_lbl={}
 unicode_empty={}
@@ -93,35 +97,45 @@ unicode_last_tag=0
 for i, (unicode_enc, unicode_enc_name) in enumerate(global_var.unicode_list.items()):
     unicode_row=i+3
     unicode_var[unicode_enc] = StringVar(main)
-    unicode_lbl[unicode_enc] = Label(frame, text=unicode_enc_name+"：", justify="left", font=text_font).grid(column=3, row=unicode_row, sticky=W)
-    unicode_empty[unicode_enc] = Label(frame, textvariable=unicode_var[unicode_enc], justify="left", font=text_font).grid(column=4, row=unicode_row)
-    unicode_count[unicode_enc] = Label(frame, text="/"+str(global_var.unicode_count[unicode_enc]), justify="left", font=text_font).grid(column=5, row=unicode_row, sticky=W)
+    #only bold total
+    if unicode_enc == "total":
+        unicode_text_font = text_sum_font
+    else:
+        unicode_text_font = text_font
+    unicode_lbl[unicode_enc] = Label(frame, text=unicode_enc_name+"：", justify="left", font=unicode_text_font).grid(column=3, row=unicode_row, sticky=W)
+    unicode_empty[unicode_enc] = Label(frame, textvariable=unicode_var[unicode_enc], justify="left", font=unicode_text_font).grid(column=4, row=unicode_row)
+    unicode_count[unicode_enc] = Label(frame, text="/"+str(global_var.unicode_count[unicode_enc]), justify="left", font=unicode_text_font).grid(column=5, row=unicode_row, sticky=W)
 
 
 #open file react function
-def open_file():
-    #get file with open file dialog
-    filename = fd.askopenfilename(initialdir = 'shell:Desktop', title="Select font file",
-                                  filetypes = [("All suppported font format","*.ttf *.otf *.woff *.woff2 *.otc *.ttc"),
-                                               ("Single font file format","*.ttf *.otf *.woff *.woff2"),
-                                               ("TrueType font","*.ttf"),
-                                               ("OpenType font","*.otf"),
-                                               ("Web Open Font Format (WOFF)","*.woff *.woff2"),
-                                               ("OpenType collection font","*.otc *.ttc"),
-                                               ("All files","*.*")
-                                              ]
-                                 )
+def open_file(filename_arg):
+    #check if file is dragged onto here
+    if filename_arg:
+        #set filename to font
+        filename = filename_arg
+    else:
+        #get file with open file dialog
+        filename = fd.askopenfilename(initialdir = 'shell:Desktop', title="Select font file",
+                                    filetypes = [("All suppported font format","*.ttf *.otf *.woff *.woff2 *.otc *.ttc"),
+                                                ("Single font file format","*.ttf *.otf *.woff *.woff2"),
+                                                ("TrueType font","*.ttf"),
+                                                ("OpenType font","*.otf"),
+                                                ("Web Open Font Format (WOFF)","*.woff *.woff2"),
+                                                ("OpenType collection font","*.otc *.ttc"),
+                                                ("All files","*.*")
+                                                ]
+                                    )
     #test if the file is a valid font file
     is_a_font = False
-    if (filename.lower().endswith(".otf") or filename.lower().endswith(".ttf") or filename.lower().endswith(".woff") or filename.lower().endswith(".woff2") or filename.lower().endswith(".otc") or filename.lower().endswith(".ttc")):
+    if (filename.lower().endswith((".otf",".ttf",".woff",".woff2",".otc",".ttc"))):
         # external module: get_char
         is_a_font = get_char.is_font(filename)
     
     #default value for non-TTCollection
     font_id = -1
     #for TTCollections, get which font to check
-    if is_a_font and (filename.lower().endswith(".otc") or filename.lower().endswith(".ttc")):
-        #get which font to use, if no choose will return 0 as default font - external module: ttc_get
+    if is_a_font and (filename.lower().endswith((".otc",".ttc"))):
+        #get which font to use, if no choose will return None - external module: ttc_get
         font_id = ttc_get.TTC_popup(main, filename, lang=current_lang).show()
         #if user not select
         if font_id is None:
@@ -139,7 +153,7 @@ def open_file():
         #get character list in font - external module: get_char
         char_list = get_char.font_import(filename, font_id, lang=current_lang)
         #get list count - external module: count_char
-        output = count_char.count_char(char_list)
+        output = count_char.count_char(char_list, main, lang=current_lang)
         cjk_char_count = output[0]
         unicode_char_count = output[1]
         #update list count
@@ -159,7 +173,9 @@ def open_file():
         #unknown error
         font_name.set("null")
         messagebox.showwarning(title="Error", message="Something happened. Please try again.")
-        
+    #reset to finish counting first time
+    first_time = False
+
 
 
 #get filename only
@@ -169,5 +185,15 @@ def path_leaf(path):
 
 #add icon
 main.tk.call('wm', 'iconphoto', main._w, PhotoImage(file='appicon.png'))
+
+#if dragged file onto exe, received file path as parameter 1 and directly start counting, icon loaded alrdy by this
+if first_time:
+    try:
+        font_arg = sys.argv[1]
+        if font_arg.lower().endswith((".otf",".ttf",".woff",".woff2",".otc",".ttc")):
+            open_file(font_arg)
+    except: 
+        pass
+
 #UI stay appear
 main.mainloop()

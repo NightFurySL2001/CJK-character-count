@@ -1,4 +1,15 @@
 Made by NightFurySL2001 / 夜煞之乐2001
+Released under MIT License
+Copyright © 2020-2021 NFSL2001
+
+2021-07-22 v0.15
+Officially released under MIT License
+Fix text files for BIG5, Table of Standard Form of Commonly Used National Characters
+Add Table of Standard Form of Less Commonly Used National Characters, FounderType Simp/Trad, Hanyi Simp/Trad list, non-compatible Unified Ideographs, total ideograph count
+Add progress bar when counting
+Changed "Unicode Sectors" to "Unicode Blocks", same for Chinese interface
+Shrink font size (TODO: variable font size)
+Support for drag file onto .exe file to start counting automatically (i.e. accepting parameters as `main.exe font.ttf`)
 
 2020-10-03 v0.11
 Add TTC processing
