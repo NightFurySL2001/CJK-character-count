@@ -16,7 +16,7 @@ cjk_list = {"gb2312":"GB/T 2312",
             "gbk":"GBK",
             "gb18030":"GB 18030",
             "hanyi-jianfan":"Hanyi Fonts Simp./Trad. List",
-            "fangzheng-jianfan":"FounderType  Simp./Trad. List",
+            "fangzheng-jianfan":"FounderType Simp./Trad. List",
             "tongyong-guifan":"Table of General Standard Chinese Characters", #通用规范汉字表
             "3500changyong":"List of Frequently Used Characters in Modern Chinese", #现代汉语常用字表
             "7000tongyong":"List of Commonly Used Characters in Modern Chinese", #现代汉语通用字表
@@ -35,7 +35,7 @@ cjk_jian_list_en = {"gb2312":"GB/T 2312",
                  "tongyong-guifan":"Table of General Standard Chinese Characters"
                 }
 cjk_jian_fan_list_en = {"hanyi-jianfan":"Hanyi Fonts Simp./Trad. List",
-                     "fangzheng-jianfan":"FounderType  Simp./Trad. List",
+                     "fangzheng-jianfan":"FounderType Simp./Trad. List",
                      "gbk":"GBK",
                      "gb18030":"GB 18030"
                     }
