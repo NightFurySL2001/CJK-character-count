@@ -25,6 +25,9 @@ Major font formats are supported in this software.
 
 ## Currently supported encoding standard/standardization list 支援的编码标准／汉字表
 
+Details of the character lists can be found in https://github.com/NightFurySL2001/cjktables.  
+字表详情可参见 https://github.com/NightFurySL2001/cjktables 。
+
 ### Encoding standard 编码标准
 * [GB/T 2312](https://en.wikipedia.org/wiki/GB_2312)
 
@@ -58,16 +61,23 @@ Major font formats are supported in this software.
 
 * [List of Frequently Used Characters of Compulsory Education/义务教育语文课程常用字表](https://old.pep.com.cn/xiaoyu/jiaoshi/tbjx/kbjd/kb2011/201202/t20120206_1099050.htm)
 
-* [Table of Standard Form of Frequently Used National Characters/常用國字標準字體表](https://zh.wikipedia.org/wiki/%E5%B8%B8%E7%94%A8%E5%9C%8B%E5%AD%97%E6%A8%99%E6%BA%96%E5%AD%97%E9%AB%94%E8%A1%A8)  
-  \**Note: Source file from [Chinese Useful ToolKit](https://www.github.com/Watermelonnn/ChineseUsefulToolKit) by Watermelonnn. Old name in this software was 《台湾教育部常用字表》.  
-  注：字表来源为Watermelonnn [Chinese Useful ToolKit](https://www.github.com/Watermelonnn/ChineseUsefulToolKit)。旧版软件内名称为《台湾教育部常用字表》。*
+* [Chart of Standard Forms of Common National Characters/常用國字標準字體表](https://zh.wikipedia.org/wiki/%E5%B8%B8%E7%94%A8%E5%9C%8B%E5%AD%97%E6%A8%99%E6%BA%96%E5%AD%97%E9%AB%94%E8%A1%A8)  
+  \**Note: Old name in this software was 《台湾教育部次常用字表》, and was temporarily removed in v0.10 and v0.11.  
+  注：旧版软件内名称为《台湾教育部次常用字表》，并于 0.10 版和 0.11 版暂时移除。*
+  
+* [Chart of Standard Forms of Less-Than-Common National Characters/次常用國字標準字體表](https://zh.wikipedia.org/wiki/%E5%B8%B8%E7%94%A8%E5%9C%8B%E5%AD%97%E6%A8%99%E6%BA%96%E5%AD%97%E9%AB%94%E8%A1%A8)  
+  \**Note: Old name in this software was 《台湾教育部常用字表》.  
+  注：旧版软件内名称为《台湾教育部常用字表》。*
 
 * [Hong Kong Supplementary Character Set/香港增補字符集](https://zh.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF%E5%A2%9E%E8%A3%9C%E5%AD%97%E7%AC%A6%E9%9B%86)  
 
 * [Supplementary Character Set (suppchara, level 1-6)/常用香港外字表（1-6级）](https://github.com/ichitenfont/suppchara)  
 
-> 《台湾教育部次常用字表》 which was introduced in v0.04 is removed due to lack of standard character table.  
-> 于v0.04版加入的《台湾教育部次常用字表》（正名：《次常用國字標準字體表》）因缺乏标准化字符字表而被移除。
+### Foundry list 厂商字表
+
+* [Hanyi Fonts Simp./Trad. List/汉仪简繁字表](https://github.com/3type/glyphs-han/blob/master/Tables/Commonly%20Used%20on%20Internet.txt)  
+
+* FounderType  Simp./Trad. List 方正简繁字表
 
 ## Software interface 软件界面
 
