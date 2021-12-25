@@ -2,13 +2,17 @@ Made by NightFurySL2001 / 夜煞之乐2001
 Released under MIT License
 Copyright © 2020-2021 NFSL2001
 
+2021-12-25 v0.16
+Add List of Graphemes of Commonly-Used Chinese Characters (Hong Kong)
+Fix drag and drop fail for fonts outside of program folder
+
 2021-09-24 v0.15.1
 Emergency patch: Unicode 14.0 newly added characters in Basic, Ext-B and Ext-C
 
 2021-09-16 v0.15
 Officially released under MIT License
 Fix text files for BIG5, Table of Standard Form of Commonly Used National Characters
-Add Table of Standard Form of Less Commonly Used National Characters, FounderType Simp/Trad, Hanyi Simp/Trad list, non-compatible Unified Ideographs, total ideograph count
+Add Table of Standard Form of Less Commonly Used National Characters (removed in v0.10), FounderType Simp/Trad, Hanyi Simp/Trad list, non-compatible Unified Ideographs, total ideograph count
 Add progress bar when counting
 Changed "Unicode Sectors" to "Unicode Blocks", same for Chinese interface
 Shrink font size (TODO: variable font size)

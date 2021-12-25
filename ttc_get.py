@@ -35,10 +35,14 @@ class TTC_popup (object):
         self.toplevel = Toplevel(master)
         self.toplevel.title(toplevel_title)
         self.toplevel.minsize(400,150)
-        #prepare variable to store font name
-        self.ttc_name = StringVar()
+        self.toplevel.maxsize(750,350)
+        #grab attention
+        self.toplevel.grab_set()
+
         #create ttc name list in this object
         self.ttc_list = get_ttc_list(filename)
+        #prepare variable to store font name, default to first item in ttc list
+        self.ttc_name = StringVar(value=self.ttc_list[0])
 
         popup_font=('Microsoft YaHei UI', 12)
 
@@ -48,7 +52,8 @@ class TTC_popup (object):
         #drop down menu with ttc_name storing option in *ttc_list
         option = OptionMenu(self.toplevel, self.ttc_name, *self.ttc_list)
         option.config(font=popup_font)
-        option.pack(fill="x", padx=12) #padding at both side of dropdown list
+        option.config(width=350)
+        option.pack(expand=True, padx=12) #padding at both side of dropdown list
 
         #button on click destroy the toplevel and return back to .show()
         button = Button(self.toplevel, text="OK", font=popup_font, command=self.toplevel.destroy)
@@ -61,6 +66,7 @@ class TTC_popup (object):
         try:
             #convert ttc_name to id in ttc_list
             self.result_id = self.ttc_list.index(self.ttc_name.get())
+            
             #return result_id
             return self.result_id
         except: #font is not in list, assume as no font chosen

@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import ttk
 from itertools import tee
 import global_var
+import os
 
 #special cjk compatibility for gbk, defined at end
 global gbk_compatibility_deci_list
@@ -124,7 +125,8 @@ def count_char(char_list, master, lang="en"):
 #load encoding file
 def load_sample_file(filename):
     font_list = []
-    for line in open(filename, "r", encoding="utf-8"):
+    full_path = os.path.join(global_var.main_directory, filename)
+    for line in open(full_path, "r", encoding="utf-8"):
         font_list.append(line.strip("\r\n").strip(" "))
     return font_list
 

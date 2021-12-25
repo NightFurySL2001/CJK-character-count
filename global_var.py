@@ -8,6 +8,26 @@ global cjk_fan_list
 global cjk_count
 global unicode_count
 
+import os, sys
+global main_directory
+
+#if packaged by pyinstaller
+#ref: https://stackoverflow.com/questions/404744/determining-application-path-in-a-python-exe-generated-by-pyinstaller
+if getattr(sys, 'frozen', False):
+    #change from loading same folder to full folder, --onedir
+    main_directory = os.path.dirname(sys.executable)
+    #`pyinstaller --onefile` change to use the following code
+    #if '_MEIPASS2' in os.environ:
+    #    main_directory = os.environ['_MEIPASS2']
+    #ref: https://stackoverflow.com/questions/9553262/pyinstaller-ioerror-errno-2-no-such-file-or-directory
+else:
+    #dev mode
+    try: #py xx.py
+        app_full_path = os.path.realpath(__file__)
+        main_directory = os.path.dirname(app_full_path)
+    except NameError: #py then run code
+        main_directory = os.getcwd()
+
 
 #english name
 #old list for compatibility
@@ -25,6 +45,7 @@ cjk_list = {"gb2312":"GB/T 2312",
             "6343cichangyong":"Chart of Standard Forms of Less-Than-Common National Characters", #次常用国字标准字体表
             "big5changyong":"BIG5 Common Character Set",
             "big5":"BIG5",
+            "hkchangyong":"List of Graphemes of Commonly-Used Chinese Characters", #常用字字形表
             "hkscs":"Hong Kong Supplementary Character Set",
             "suppchara":"Common Supplementary Characters in Hong Kong (Level 1-6)"
            }
@@ -43,6 +64,7 @@ cjk_fan_list_en = {"4808changyong":"Chart of Standard Forms of Common National C
                 "6343cichangyong":"Chart of Standard Forms of Less-Than-Common National Characters",
                 "big5changyong":"BIG5 Common Character Set",
                 "big5":"BIG5",
+                "hkchangyong":"List of Graphemes of Commonly-Used Chinese Characters",
                 "hkscs":"Hong Kong Supplementary Character Set",
                 "suppchara":"Common Supplementary Characters in Hong Kong (Level 1-6)",
                 "gb12345":"GB/T 12345"
@@ -80,6 +102,7 @@ cjk_fan_list_zhs = {"4808changyong":"常用国字标准字体表",
                 "6343cichangyong":"次常用国字标准字体表",
                 "big5changyong":"五大码 (Big5) 常用汉字表",
                 "big5":"五大码 (Big5)",
+                "hkchangyong":"常用字字形表",
                 "hkscs":"香港增补字符集 (HKSCS)",
                 "suppchara":"常用香港外字表 (1-6级)",
                 "gb12345":"GB/T 12345"
@@ -106,6 +129,7 @@ cjk_fan_list_zht = {"4808changyong":"常用國字標準字體表",
                 "6343cichangyong":"次常用國字標準字體表",
                 "big5changyong":"五大碼 (Big5) 常用漢字表",
                 "big5":"五大碼 (Big5)",
+                "hkchangyong":"常用字字形表",
                 "hkscs":"香港增補字符集 (HKSCS)",
                 "suppchara":"常用香港外字表 (1-6級)",
                 "gb12345":"GB/T 12345"
@@ -154,6 +178,7 @@ cjk_count = {"gb2312":6763,
             "6343cichangyong":6343,
             "big5changyong":5401,
             "big5":13060,
+            "hkchangyong":4825,
             "hkscs":4603,
             "suppchara":1097
            }

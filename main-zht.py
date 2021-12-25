@@ -7,14 +7,15 @@ import count_char
 import global_var
 import ttc_get
 import ntpath
+import os
 import pyglet
 #drag and drop
 import sys
 first_time = True
 
 #load ui font
-pyglet.font.add_file('GenYoGothicTW-R.ttf')
-pyglet.font.add_file('cjk-char-bold.ttf')
+pyglet.font.add_file(os.path.join(global_var.main_directory, 'GenYoGothicTW-R.ttf'))
+pyglet.font.add_file(os.path.join(global_var.main_directory, 'cjk-char-bold.ttf'))
 #start window
 main = Tk()
 #set title
@@ -185,7 +186,8 @@ def path_leaf(path):
     return tail or ntpath.basename(head)
 
 #add icon
-main.tk.call('wm', 'iconphoto', main._w, PhotoImage(file='appicon.png'))
+pic_path = os.path.join(global_var.main_directory, 'appicon.png')
+main.tk.call('wm', 'iconphoto', main._w, PhotoImage(file=pic_path))
 
 #if dragged file onto exe, received file path as parameter 1 and directly start counting, icon loaded alrdy by this
 if first_time:
