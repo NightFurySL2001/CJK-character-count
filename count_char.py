@@ -116,7 +116,7 @@ def count_char(char_list, master, lang="en"):
     cjk_char_count["gb18030"]=unicode_char_count["basic"]+unicode_char_count["ext-a"]+unicode_char_count["zero"]
     
     #sum up total cjk unified ideographs
-    unicode_char_count["total"] = unicode_char_count["zero"]+unicode_char_count["basic"]+unicode_char_count["ext-a"]+unicode_char_count["compat-ideo"]+unicode_char_count["ext-b"]+unicode_char_count["ext-c"]+unicode_char_count["ext-d"]+unicode_char_count["ext-e"]+unicode_char_count["ext-f"]+unicode_char_count["ext-g"]
+    unicode_char_count["total"] = unicode_char_count["zero"]+unicode_char_count["basic"]+unicode_char_count["ext-a"]+unicode_char_count["compat-ideo"]+unicode_char_count["ext-b"]+unicode_char_count["ext-c"]+unicode_char_count["ext-d"]+unicode_char_count["ext-e"]+unicode_char_count["ext-f"]
     #print(unicode_char_count["ext-g"])
     return (cjk_char_count, unicode_char_count)
 
@@ -172,6 +172,8 @@ def uni_range_check(char_base10):
         return "compat-sup"
     elif char_base10 in char_range(deci("30000"), deci("3134F")): #30000 - 3134F CJK Unified Ideographs Extension G
         return "ext-g"
+    elif char_base10 in char_range(deci("31350"), deci("323AF")): #31350 - 323AF CJK Unified Ideographs Extension H
+        return "ext-h"
 
 
 #definition of gbk_compatibility_deci_list and cjk_compatibility_ideographs_deci_list, require deci(number)

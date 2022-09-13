@@ -47,7 +47,8 @@ cjk_list = {"gb2312":"GB/T 2312",
             "big5":"BIG5",
             "hkchangyong":"List of Graphemes of Commonly-Used Chinese Characters", #常用字字形表
             "hkscs":"Hong Kong Supplementary Character Set",
-            "suppchara":"Common Supplementary Characters in Hong Kong (Level 1-6)"
+            "suppchara":"Common Supplementary Characters in Hong Kong (Level 1-6)",
+            "iicore":"IICore"
            }
 cjk_jian_list_en = {"gb2312":"GB/T 2312",
                  "3500changyong":"List of Frequently Used Characters in Modern Chinese",
@@ -57,6 +58,7 @@ cjk_jian_list_en = {"gb2312":"GB/T 2312",
                 }
 cjk_jian_fan_list_en = {"hanyi-jianfan":"Hanyi Fonts Simp./Trad. List",
                      "fangzheng-jianfan":"FounderType Simp./Trad. List",
+                     "iicore":"IICore",
                      "gbk":"GBK",
                      "gb18030":"GB 18030"
                     }
@@ -83,6 +85,7 @@ unicode_list = {"kangxi":"Kangxi Radicals",
                 "ext-f":"CJK Unified Ideographs Extension F",
                 "compat-sup":"CJK Compatibility Ideographs Supplement",
                 "ext-g":"CJK Unified Ideographs Extension G",
+                "ext-h":"CJK Unified Ideographs Extension H",
                 "total":"Total Ideographs"
                 }
 
@@ -95,6 +98,7 @@ cjk_jian_list_zhs = {"gb2312":"GB/T 2312",
                 }
 cjk_jian_fan_list_zhs = {"hanyi-jianfan":"汉仪简繁字表",
                      "fangzheng-jianfan":"方正简繁字表",
+                     "iicore":"国际表意文字核心 (IICore)",
                      "gbk":"GBK",
                      "gb18030":"GB 18030"
                     }
@@ -121,6 +125,7 @@ unicode_list_zhs = {"kangxi":"康熙部首",
                 "ext-f":"中日韩统一表意文字—扩展F区",
                 "compat-sup":"中日韩兼容表意文字（补充区）",
                 "ext-g":"中日韩统一表意文字—扩展G区",
+                "ext-h":"中日韩统一表意文字—扩展H区",
                 "total":"总汉字数"
                 }
 
@@ -136,6 +141,7 @@ cjk_fan_list_zht = {"4808changyong":"常用國字標準字體表",
                }
 cjk_jian_fan_list_zht = {"hanyi-jianfan":"漢儀簡繁字表",
                      "fangzheng-jianfan":"方正簡繁字表",
+                     "iicore":"國際表意文字核心 (IICore)",
                      "gbk":"GBK",
                      "gb18030":"GB 18030"
                     }
@@ -159,6 +165,7 @@ unicode_list_zht = {"kangxi":"康熙部首",
                 "ext-f":"中日韓統一表意文字—擴展F區",
                 "compat-sup":"中日韓兼容表意文字（補充區）",
                 "ext-g":"中日韓統一表意文字—擴展G區",
+                "ext-h":"中日韓統一表意文字—擴展H區",
                 "total":"總漢字數"
                 }
 
@@ -180,7 +187,8 @@ cjk_count = {"gb2312":6763,
             "big5":13060,
             "hkchangyong":4825,
             "hkscs":4603,
-            "suppchara":1097
+            "suppchara":1102,
+            "iicore":9810
            }
 unicode_count = {"kangxi":214,
                 "kangxi-sup":115,
@@ -190,13 +198,14 @@ unicode_count = {"kangxi":214,
                 "compat":472,
                 "compat-ideo":12,
                 "ext-b":42720,
-                "ext-c":4153,
+                "ext-c":4154,
                 "ext-d":222,
                 "ext-e":5762,
                 "ext-f":7473,
                 "compat-sup":542,
                 "ext-g":4939,
+                "ext-h":4192,
                 "total":0
                 }
 cjk_count["gb18030"] = unicode_count["zero"]+unicode_count["basic"]+unicode_count["ext-a"]
-unicode_count["total"] = unicode_count["zero"]+unicode_count["compat-ideo"]+unicode_count["basic"]+unicode_count["ext-a"]+unicode_count["ext-b"]+unicode_count["ext-c"]+unicode_count["ext-d"]+unicode_count["ext-e"]+unicode_count["ext-f"]+unicode_count["ext-g"]
+unicode_count["total"] = unicode_count["zero"]+unicode_count["compat-ideo"]+unicode_count["basic"]+unicode_count["ext-a"]+unicode_count["ext-b"]+unicode_count["ext-c"]+unicode_count["ext-d"]+unicode_count["ext-e"]+unicode_count["ext-f"]
