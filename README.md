@@ -52,8 +52,8 @@ Details of the character lists can be found in https://github.com/NightFurySL200
   注：不计算私用区（PUA）字符，共计20923字。*
 
 * [GB 18030](https://en.wikipedia.org/wiki/GB_18030)  
-  \**According to latest GB 18030-2022, level 3 support includes all CJK characters in Unicode up until Extension F, including the 12 "compatibility" ideographs in the CJK compatibility block. New additions appended to end of CJK Ideographs Basic block, Extension A, B and C are counted although not existing in GB 18030-2022.*   
-  依据最新 GB 18030-2022，第三级支援包括全部中日韩汉字直至扩展 F 区，包括兼容汉字区的 12 个“兼容”汉字。中日韩汉字基本区、扩展 A、B、C 区后面新增的字符虽然并未在 GB 18030-2022内，但是在本软件中已计入*
+  \**According to latest GB 18030-2022, level 3 support includes all CJK characters in Unicode up until Extension F, including the 12 "compatibility" ideographs in the CJK compatibility block. New additions appended to end of CJK Ideographs Basic block, Extension A, B and C are counted although not existing in GB 18030-2022.   
+  依据最新 GB 18030-2022，第三级支援包括全部中日韩汉字直至扩展 F 区，包括兼容汉字区的 12 个“兼容”汉字。中日韩汉字基本区、扩展 A、B、C 区后面新增的字符虽然并未在 GB 18030-2022内，但是在本软件中已计入。*
 
 * [BIG5/五大码](https://en.wikipedia.org/wiki/Big5)
 
