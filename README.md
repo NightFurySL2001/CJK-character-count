@@ -96,8 +96,8 @@ Details of the character lists can be found in https://github.com/NightFurySL200
 ## Dependencies 依赖模块
 
 * `tkinter`  
-  For software display. Non-commercial use module, should be removed and replaced in next version.  
-  使用于软件显示。非商用模块，应在未来移除与替换该模块。
+  For software display. Should be removed and replaced in next version.  
+  使用于软件显示。应在未来移除与替换该模块。
 
 * [`fontTools`](https://github.com/fonttools/fonttools)  
   Extract `cmap` table.  
@@ -142,7 +142,7 @@ pyinstaller main-zhs.spec
 pyinstaller main-zht.spec
 
 // To build full folder, use the provided .bat file
-.\batch.bat
+.\build.bat
 ```
 
 ## To-do 待办事项
