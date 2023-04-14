@@ -1,10 +1,5 @@
 from tkinter import messagebox
-
-from itertools import chain
-import sys
-
 from fontTools.ttLib import TTFont
-from fontTools.unicode import Unicode
 
 def font_import(filename, font_id=-1, lang="en"):
     #language localization
@@ -24,11 +19,11 @@ def font_import(filename, font_id=-1, lang="en"):
                     ignoreDecompileErrors=True,
                     fontNumber=font_id)
     #get chars from cmap
-    chars = chain.from_iterable([y + (Unicode[y[0]],) for y in x.cmap.items()] for x in ttf["cmap"].tables)
-    
-    return chars
+    chars = set(y[0] for x in ttf["cmap"].tables for y in x.cmap.items())
+
     #close font
     ttf.close()
+    return chars
 
 def is_font(filename):
     try: #open the font with TTFont

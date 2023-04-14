@@ -26,11 +26,10 @@ else:
         app_full_path = os.path.realpath(__file__)
         main_directory = os.path.dirname(app_full_path)
     except NameError: #py then run code
-        main_directory = os.getcwd()
+        main_directory = os.path.dirname(os.getcwd())
 
 
-#english name
-#old list for compatibility
+#full list of supported standard for variable initiation, also old list for compatibility
 cjk_list = {"gb2312":"GB/T 2312",
             "gb12345":"GB/T 12345",
             "gbk":"GBK",
@@ -50,6 +49,8 @@ cjk_list = {"gb2312":"GB/T 2312",
             "suppchara":"Common Supplementary Characters in Hong Kong (Level 1-6)",
             "iicore":"IICore"
            }
+
+#english name
 cjk_jian_list_en = {"gb2312":"GB/T 2312",
                  "3500changyong":"List of Frequently Used Characters in Modern Chinese",
                  "7000tongyong":"List of Commonly Used Characters in Modern Chinese",
@@ -88,6 +89,12 @@ unicode_list = {"kangxi":"Kangxi Radicals",
                 "ext-h":"CJK Unified Ideographs Extension H",
                 "total":"Total Ideographs"
                 }
+titles_en = {
+    "simp": "Chinese (Simp) Encodings",
+    "simptrad": "Chinese (Simp/Trad) Encodings",
+    "trad": "Chinese (Trad) Encodings",
+    "uni": "Unicode Blocks"
+}
 
 #chinese name (simp)
 cjk_jian_list_zhs = {"gb2312":"GB/T 2312",
@@ -128,6 +135,12 @@ unicode_list_zhs = {"kangxi":"康熙部首",
                 "ext-h":"中日韩统一表意文字—扩展H区",
                 "total":"总汉字数"
                 }
+titles_zhs = {
+    "simp": "简体中文编码",
+    "simptrad": "简体/繁体中文编码",
+    "trad": "繁体中文编码",
+    "uni": "统一码区段"
+}
 
 #chinese name (trad)
 cjk_fan_list_zht = {"4808changyong":"常用國字標準字體表",
@@ -168,12 +181,18 @@ unicode_list_zht = {"kangxi":"康熙部首",
                 "ext-h":"中日韓統一表意文字—擴展H區",
                 "total":"總漢字數"
                 }
+titles_zht = {
+    "simp": "簡體中文編碼",
+    "simptrad": "簡體/正體（繁體）中文編碼",
+    "trad": "正體（繁體）中文編碼",
+    "uni": "統一碼區段"
+}
 
 
 #character count
 cjk_count = {"gb2312":6763,
             "gb12345":6866,
-            "gbk":20923,
+            "gbk":20924,
             "gb18030":0,
             "hanyi-jianfan":9169,
             "fangzheng-jianfan":9664,
