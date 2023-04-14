@@ -23,6 +23,18 @@ Major font formats are supported in this software.
 
 ` *.ttf, *.otf, *.woff, *.woff2, *.ttc, *.otc`
 
+## Software interface 软件界面
+
+`main.exe` is the English version, `main-zhs.exe` is the Chinese (Simplified) version, `main-zht.exe` is the Chinese (Traditional) version.
+
+`main.exe` 为英文版，`main-zhs.exe` 为简体中文版，`main-zht.exe` 为繁体中文版。
+
+<img src="https://raw.githubusercontent.com/NightFurySL2001/CJK-character-count/master/resource/jf-openhuninn-sample-en.png" width="500" >
+
+<img src="https://raw.githubusercontent.com/NightFurySL2001/CJK-character-count/master/resource/jf-openhuninn-sample-zhs.png" width="500" >
+
+<img src="https://raw.githubusercontent.com/NightFurySL2001/CJK-character-count/master/resource/jf-openhuninn-sample-zht.png" width="500" >
+
 ## Currently supported encoding standard/standardization list 支援的编码标准／汉字表
 
 Details of the character lists can be found in https://github.com/NightFurySL2001/cjktables.  
@@ -82,16 +94,6 @@ Details of the character lists can be found in https://github.com/NightFurySL200
 * [Hanyi Fonts Simp./Trad. List/汉仪简繁字表](https://github.com/3type/glyphs-han/blob/master/Tables/Commonly%20Used%20on%20Internet.txt)  
 
 * FounderType  Simp./Trad. List 方正简繁字表
-
-## Software interface 软件界面
-
-`main.exe` is the English version, `main-zhs.exe` is the Chinese (Simplified) version, `main-zht.exe` is the Chinese (Traditional) version.
-
-`main.exe` 为英文版，`main-zhs.exe` 为简体中文版，`main-zht.exe` 为繁体中文版。
-
-<img src="https://raw.githubusercontent.com/NightFurySL2001/CJK-character-count/master/resource/jf-openhuninn-1.1.ttf-sample-en.png" height="400" >
-
-<img src="https://raw.githubusercontent.com/NightFurySL2001/CJK-character-count/master/resource/jf-openhuninn-1.1.ttf-sample-zh.png" width="500" >
 
 ## Dependencies 依赖模块
 
