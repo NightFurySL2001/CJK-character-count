@@ -29,7 +29,7 @@ def count_char(char_list, master, lang="en"):
         toplevel_title = "Counting..."
 
     #get font unicode list
-    lines_seen = []
+    lines_seen = set()
     unicode_char_count={}
 
     #prepare unicode area count storage
@@ -67,11 +67,11 @@ def count_char(char_list, master, lang="en"):
         current_uni_dec_value = row[0]
 
         #refresh popup
-        popup.update()
+        #popup.update()
 
         #check for duplicate as all `cmap` table are exported for all platform
         if current_uni_dec_value not in lines_seen:
-            lines_seen.append(current_uni_dec_value)
+            lines_seen.add(current_uni_dec_value)
 
             #check range with base 10 unicode and count by range
             range = uni_range_check(current_uni_dec_value)
@@ -104,7 +104,7 @@ def count_char(char_list, master, lang="en"):
         #increment progress
         progress+=1
         #update progress bar
-        progress_var.set(progress)
+        #progress_var.set(progress)
         
         #if already saw, skip it
         continue
@@ -128,7 +128,7 @@ def load_sample_file(filename):
     full_path = os.path.join(global_var.main_directory, filename)
     for line in open(full_path, "r", encoding="utf-8"):
         font_list.append(line.strip("\r\n").strip(" "))
-    return font_list
+    return set(font_list)
 
 #conversion to base 10, return 0 if failed
 def deci(number):
