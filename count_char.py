@@ -28,6 +28,7 @@ def count_char(char_list, master, lang="en"):
     for encoding in global_var.cjk_list:
         cjk_char_count[encoding]=0
 
+
     #row is unicode in decimal
     for row in char_list:
         #check range with base 10 unicode and count by range
