@@ -23,6 +23,18 @@ Major font formats are supported in this software.
 
 ` *.ttf, *.otf, *.woff, *.woff2, *.ttc, *.otc`
 
+## Software interface 软件界面
+
+`main.exe` is the English version, `main-zhs.exe` is the Chinese (Simplified) version, `main-zht.exe` is the Chinese (Traditional) version.
+
+`main.exe` 为英文版，`main-zhs.exe` 为简体中文版，`main-zht.exe` 为繁体中文版。
+
+<img src="https://raw.githubusercontent.com/NightFurySL2001/CJK-character-count/master/resource/jf-openhuninn-sample-en.png" width="500" >
+
+<img src="https://raw.githubusercontent.com/NightFurySL2001/CJK-character-count/master/resource/jf-openhuninn-sample-zhs.png" width="500" >
+
+<img src="https://raw.githubusercontent.com/NightFurySL2001/CJK-character-count/master/resource/jf-openhuninn-sample-zht.png" width="500" >
+
 ## Currently supported encoding standard/standardization list 支援的编码标准／汉字表
 
 Details of the character lists can be found in https://github.com/NightFurySL2001/cjktables.  
@@ -40,8 +52,8 @@ Details of the character lists can be found in https://github.com/NightFurySL200
   注：不计算私用区（PUA）字符，共计20923字。*
 
 * [GB 18030](https://en.wikipedia.org/wiki/GB_18030)  
-  \**According to latest GB 18030-2022, level 3 support includes all CJK characters in Unicode up until Extension F, including the 12 "compatibility" ideographs in the CJK compatibility block. New additions appended to end of CJK Ideographs Basic block, Extension A, B and C are counted although not existing in GB 18030-2022.*   
-  依据最新 GB 18030-2022，第三级支援包括全部中日韩汉字直至扩展 F 区，包括兼容汉字区的 12 个“兼容”汉字。中日韩汉字基本区、扩展 A、B、C 区后面新增的字符虽然并未在 GB 18030-2022内，但是在本软件中已计入*
+  \**According to latest GB 18030-2022, level 3 support includes all CJK characters in Unicode up until Extension F, including the 12 "compatibility" ideographs in the CJK compatibility block. New additions appended to end of CJK Ideographs Basic block, Extension A, B and C are counted although not existing in GB 18030-2022.   
+  依据最新 GB 18030-2022，第三级支援包括全部中日韩汉字直至扩展 F 区，包括兼容汉字区的 12 个“兼容”汉字。中日韩汉字基本区、扩展 A、B、C 区后面新增的字符虽然并未在 GB 18030-2022内，但是在本软件中已计入。*
 
 * [BIG5/五大码](https://en.wikipedia.org/wiki/Big5)
 
@@ -83,21 +95,11 @@ Details of the character lists can be found in https://github.com/NightFurySL200
 
 * FounderType  Simp./Trad. List 方正简繁字表
 
-## Software interface 软件界面
-
-`main.exe` is the English version, `main-zhs.exe` is the Chinese (Simplified) version, `main-zht.exe` is the Chinese (Traditional) version.
-
-`main.exe` 为英文版，`main-zhs.exe` 为简体中文版，`main-zht.exe` 为繁体中文版。
-
-<img src="https://raw.githubusercontent.com/NightFurySL2001/CJK-character-count/master/resource/jf-openhuninn-1.1.ttf-sample-en.png" height="400" >
-
-<img src="https://raw.githubusercontent.com/NightFurySL2001/CJK-character-count/master/resource/jf-openhuninn-1.1.ttf-sample-zh.png" width="500" >
-
 ## Dependencies 依赖模块
 
 * `tkinter`  
-  For software display. Non-commercial use module, should be removed and replaced in next version.  
-  使用于软件显示。非商用模块，应在未来移除与替换该模块。
+  For software display. Should be removed and replaced in next version.  
+  使用于软件显示。应在未来移除与替换该模块。
 
 * [`fontTools`](https://github.com/fonttools/fonttools)  
   Extract `cmap` table.  
@@ -142,7 +144,7 @@ pyinstaller main-zhs.spec
 pyinstaller main-zht.spec
 
 // To build full folder, use the provided .bat file
-.\batch.bat
+.\build.bat
 ```
 
 ## To-do 待办事项

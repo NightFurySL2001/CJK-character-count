@@ -1,6 +1,16 @@
 Made by NightFurySL2001 / 夜煞之乐2001
 Released under MIT License
-Copyright © 2020-2021 NFSL2001
+Copyright © 2020-2023 NFSL2001
+
+2023-04-13 v0.20
+Major optimization on code: OpenType limit 65k is possible to be done in <5sec
+Add output to text file feature with -r/--report option in command line
+
+2022-09-13 v0.17
+Add IICore (deprecated standard in Unicode)
+Update GB 18030 to follow GB 18030-2022 range: Basic, Compatibility ideograph and Ext-A to Ext-F (pseudo-standard before this, total count still incorrect due to newly added character at the end of Basic, Ext-A, Ext-B and Ext-C)
+Update suppchara to version 1.8 (2022/09/06)
+Unicode 15.0 newly added characters Ext-C, newly added block Ext-H
 
 2021-12-25 v0.16
 Add List of Graphemes of Commonly-Used Chinese Characters (Hong Kong)
