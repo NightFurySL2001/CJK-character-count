@@ -141,12 +141,13 @@ def open_file(filename_arg):
     else:
         #get file with open file dialog
         filename = fd.askopenfilename(initialdir = 'shell:Desktop', title="選擇字型文件",
-                                    filetypes = [("所有支援的字型格式","*.ttf *.otf *.woff *.woff2 *.otc *.ttc"),
-                                                ("單獨字型文件","*.ttf *.otf *.woff *.woff2"),
+                                    filetypes = [("所有支援的字型格式","*.ttf *.otf *.woff *.woff2 *.otc *.ttc *.bdf"),
+                                                ("單獨字型文件","*.ttf *.otf *.woff *.woff2 *.bdf"),
                                                 ("TrueType 字型","*.ttf"),
                                                 ("OpenType 字型","*.otf"),
                                                 ("網頁開放字型 (WOFF)","*.woff *.woff2"),
                                                 ("OpenType 合集字型","*.otc *.ttc"),
+                                                ("位圖字體分布格式","*.bdf"),
                                                 ("全部文件","*.*")
                                                 ]
                                     )
@@ -159,7 +160,7 @@ def open_file(filename_arg):
 
     #test if the file is a valid font file
     is_a_font = False
-    if (filename.lower().endswith((".otf",".ttf",".woff",".woff2",".otc",".ttc"))):
+    if (filename.lower().endswith((".otf",".ttf",".woff",".woff2",".otc",".ttc",".bdf"))):
         # external module: get_char
         is_a_font = get_char.is_font(filename)
     
@@ -221,7 +222,7 @@ if first_time:
         if args.filename is None:
             raise FileNotFoundError
         font_filename_arg = args.filename
-        if font_filename_arg.lower().endswith((".otf",".ttf",".woff",".woff2",".otc",".ttc")):
+        if font_filename_arg.lower().endswith((".otf",".ttf",".woff",".woff2",".otc",".ttc",".bdf")):
             open_file(font_filename_arg)
     except: 
         pass
