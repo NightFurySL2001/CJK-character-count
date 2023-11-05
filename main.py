@@ -137,12 +137,13 @@ def open_file(filename_arg):
     else:
         #get file with open file dialog
         filename = fd.askopenfilename(initialdir = 'shell:Desktop', title="Select font file",
-                                    filetypes = [("All suppported font format","*.ttf *.otf *.woff *.woff2 *.otc *.ttc"),
-                                                ("Single font file format","*.ttf *.otf *.woff *.woff2"),
+                                    filetypes = [("All suppported font format","*.ttf *.otf *.woff *.woff2 *.otc *.ttc *.bdf"),
+                                                ("Single font file format","*.ttf *.otf *.woff *.woff2 *.bdf"),
                                                 ("TrueType font","*.ttf"),
                                                 ("OpenType font","*.otf"),
                                                 ("Web Open Font Format (WOFF)","*.woff *.woff2"),
                                                 ("OpenType collection font","*.otc *.ttc"),
+                                                ("Glyph Bitmap Distribution Format","*.bdf"),
                                                 ("All files","*.*")
                                                 ]
                                     )
@@ -155,7 +156,7 @@ def open_file(filename_arg):
     
     #test if the file is a valid font file
     is_a_font = False
-    if (filename.lower().endswith((".otf",".ttf",".woff",".woff2",".otc",".ttc"))):
+    if (filename.lower().endswith((".otf",".ttf",".woff",".woff2",".otc",".ttc",".bdf"))):
         # external module: get_char
         is_a_font = get_char.is_font(filename)
     
@@ -217,7 +218,7 @@ if first_time:
         if args.filename is None:
             raise FileNotFoundError
         font_filename_arg = args.filename
-        if font_filename_arg.lower().endswith((".otf",".ttf",".woff",".woff2",".otc",".ttc")):
+        if font_filename_arg.lower().endswith((".otf",".ttf",".woff",".woff2",".otc",".ttc",".bdf")):
             open_file(font_filename_arg)
     except: 
         pass

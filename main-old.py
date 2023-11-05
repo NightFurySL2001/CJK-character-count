@@ -72,18 +72,19 @@ for i, (unicode_enc, unicode_enc_name) in enumerate(global_var.unicode_list.item
 def open_file():
     #get file with open file dialog
     filename = fd.askopenfilename(initialdir = 'shell:Desktop', title="Select font file",
-                                  filetypes = [("All suppported font format","*.ttf *.otf *.woff *.woff2 *.otc *.ttc"),
-                                               ("Single font file format","*.ttf *.otf *.woff *.woff2"),
+                                  filetypes = [("All suppported font format","*.ttf *.otf *.woff *.woff2 *.otc *.ttc *.bdf"),
+                                               ("Single font file format","*.ttf *.otf *.woff *.woff2 *.bdf"),
                                                ("TrueType font","*.ttf"),
                                                ("OpenType font","*.otf"),
                                                ("Web Open Font Format (WOFF)","*.woff *.woff2"),
                                                ("OpenType collection font","*.otc *.ttc"),
+                                               ("Glyph Bitmap Distribution Format","*.bdf"),
                                                ("All files","*.*")
                                               ]
                                  )
     #test if the file is a valid font file
     is_a_font = False
-    if (filename.lower().endswith(".otf") or filename.lower().endswith(".ttf") or filename.lower().endswith(".woff") or filename.lower().endswith(".woff2") or filename.lower().endswith(".otc") or filename.lower().endswith(".ttc")):
+    if (filename.lower().endswith(".otf") or filename.lower().endswith(".ttf") or filename.lower().endswith(".woff") or filename.lower().endswith(".woff2") or filename.lower().endswith(".otc") or filename.lower().endswith(".ttc")) or filename.lower().endswith(".bdf"):
         # external module: get_char
         is_a_font = get_char.is_font(filename)
     
