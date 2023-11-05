@@ -87,6 +87,7 @@ unicode_list = {"kangxi":"Kangxi Radicals",
                 "compat-sup":"CJK Compatibility Ideographs Supplement",
                 "ext-g":"CJK Unified Ideographs Extension G",
                 "ext-h":"CJK Unified Ideographs Extension H",
+                "ext-i":"CJK Unified Ideographs Extension I",
                 "total":"Total Ideographs"
                 }
 titles_en = {
@@ -133,6 +134,7 @@ unicode_list_zhs = {"kangxi":"康熙部首",
                 "compat-sup":"中日韩兼容表意文字（补充区）",
                 "ext-g":"中日韩统一表意文字—扩展G区",
                 "ext-h":"中日韩统一表意文字—扩展H区",
+                "ext-i":"中日韩统一表意文字—扩展I区",
                 "total":"总汉字数"
                 }
 titles_zhs = {
@@ -179,6 +181,7 @@ unicode_list_zht = {"kangxi":"康熙部首",
                 "compat-sup":"中日韓兼容表意文字（補充區）",
                 "ext-g":"中日韓統一表意文字—擴展G區",
                 "ext-h":"中日韓統一表意文字—擴展H區",
+                "ext-i":"中日韓統一表意文字—擴展I區",
                 "total":"總漢字數"
                 }
 titles_zht = {
@@ -224,6 +227,7 @@ unicode_count = {"kangxi":214,
                 "compat-sup":542,
                 "ext-g":4939,
                 "ext-h":4192,
+                "ext-i":622,
                 "total":0
                 }
 cjk_count["gb18030"] = unicode_count["zero"]+unicode_count["basic"]+unicode_count["ext-a"]

@@ -1,4 +1,3 @@
-from tkinter import *
 import global_var
 import os
 
@@ -27,7 +26,6 @@ def count_char(char_list, master, lang="en"):
     #prepare cjk encoding count storage, moved extracting text from txt to main code bottom
     for encoding in global_var.cjk_list:
         cjk_char_count[encoding]=0
-
 
     #row is unicode in decimal
     for row in char_list:
@@ -63,6 +61,8 @@ def count_char(char_list, master, lang="en"):
         #if already saw, skip it
         continue
 
+    # add zero to gbk
+    cjk_char_count["gbk"]+=unicode_char_count["zero"]
     #gb18030 mandatory CJK Unified Ideographs and CJK Unified Ideographs Extension A
     cjk_char_count["gb18030"]=unicode_char_count["basic"]+unicode_char_count["ext-a"]+unicode_char_count["zero"]
     
