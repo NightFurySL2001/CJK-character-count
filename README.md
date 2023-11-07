@@ -128,8 +128,8 @@ Please install [latest version of Python 3](https://www.python.org/downloads/).
 ### Dependencies 安装依赖模块
 ```
 pip3 install fonttools
-pip3 install pyglet
-pip3 install pyinstaller
+pip3 install pyglet==1.*
+pip3 install pyinstaller==5.*
 ```
 
 ### Building software 构建软件
