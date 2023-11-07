@@ -7,6 +7,7 @@ global cjk_fan_list
 
 global cjk_count
 global unicode_count
+global unicode_block_range
 
 import os, sys
 global main_directory
@@ -231,4 +232,24 @@ unicode_count = {"kangxi":214,
                 "total":0
                 }
 cjk_count["gb18030"] = unicode_count["zero"]+unicode_count["basic"]+unicode_count["ext-a"]
-unicode_count["total"] = unicode_count["zero"]+unicode_count["compat-ideo"]+unicode_count["basic"]+unicode_count["ext-a"]+unicode_count["ext-b"]+unicode_count["ext-c"]+unicode_count["ext-d"]+unicode_count["ext-e"]+unicode_count["ext-f"]
+unicode_count["total"] = unicode_count["zero"]+unicode_count["compat-ideo"]+unicode_count["basic"]+sum([
+    y for x,y in unicode_count.items() if x.startswith("ext-")
+])
+
+unicode_block_range = {
+    "zero": [0x3007, 0x3007], # U+3007 Ideographic Number Zero Unicode Character
+    "kangxi": [0x2F00, 0x2FDF], #2F00 — 2FDF Kangxi Radicals
+    "kangxi-sup": [0x2E80, 0x2EFF], #2E80 — 2EFF CJK Radical Supplements
+    "basic": [0x4E00, 0x9FFF], #4E00 — 9FFF CJK Unified Ideographs
+    "ext-a": [0x3400, 0x4DBF], #3400 — 4DBF CJK Unified Ideographs Extension A
+    "compat": [0xF900, 0xFAFF], #F900 — FAFF CJK Compatibility Ideographs
+    "ext-b": [0x20000, 0x2A6DF], #20000 — 2A6DF CJK Unified Ideographs Extension B
+    "ext-c": [0x2A700, 0x2B73F], #2A700 — 2B73F CJK Unified Ideographs Extension C
+    "ext-d": [0x2B740, 0x2B81F], #2B740 — 2B81F CJK Unified Ideographs Extension D
+    "ext-e": [0x2B820, 0x2CEAF], #2B820 — 2CEAF CJK Unified Ideographs Extension E
+    "ext-f": [0x2CEB0, 0x2EBEF], #2CEB0 — 2EBEF CJK Unified Ideographs Extension F
+    "compat-sup": [0x2F800, 0x2FA1F], #2F800 — 2FA1F CJK Compatibility Ideographs Supplement
+    "ext-g": [0x30000, 0x3134F], #30000 — 3134F CJK Unified Ideographs Extension G
+    "ext-h": [0x31350, 0x323AF], #31350 — 323AF CJK Unified Ideographs Extension H
+    "ext-i": [0x2EBF0, 0x2EE5F], #2EBF0 — 2EE5F CJK Unified Ideographs Extension I
+}
