@@ -8,7 +8,7 @@ import global_var
 import ttc_get
 import ntpath
 import os
-import pyglet
+from pyglet import font as pygletfont
 #drag and drop
 import sys
 import argparse
@@ -26,8 +26,9 @@ parser.add_argument('-r', '--report',
 args = parser.parse_args()
 
 #load ui font
-pyglet.font.add_file(os.path.join(global_var.main_directory, 'GenYoGothicTW-R.ttf'))
-pyglet.font.add_file(os.path.join(global_var.main_directory, 'cjk-char-bold.ttf'))
+pygletfont.add_file(os.path.join(global_var.main_directory, 'GenYoGothicTW-R.ttf'))
+pygletfont.add_file(os.path.join(global_var.main_directory, 'cjk-char-bold.ttf'))
+
 #start window
 main = Tk()
 #set title
