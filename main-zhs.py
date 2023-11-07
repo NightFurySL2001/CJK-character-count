@@ -195,7 +195,7 @@ def open_file(filename_arg):
     #get character list in font - external module: get_char
     char_list = get_char.font_import(filename, font_id, lang=current_lang)
     #get list count - external module: count_char
-    output = count_char.count_char(char_list, main, lang=current_lang)
+    output = count_char.count_char(char_list)
     cjk_char_count = output[0]
     unicode_char_count = output[1]
     #update list count
