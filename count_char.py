@@ -66,7 +66,9 @@ def count_char(char_list):
     cjk_char_count["gb18030"]=unicode_char_count["basic"]+unicode_char_count["ext-a"]+unicode_char_count["zero"]
     
     #sum up total cjk unified ideographs
-    unicode_char_count["total"] = unicode_char_count["zero"]+unicode_char_count["basic"]+unicode_char_count["ext-a"]+unicode_char_count["compat-ideo"]+unicode_char_count["ext-b"]+unicode_char_count["ext-c"]+unicode_char_count["ext-d"]+unicode_char_count["ext-e"]+unicode_char_count["ext-f"]
+    unicode_char_count["total"] = unicode_char_count["zero"]+unicode_char_count["basic"]+unicode_char_count["compat-ideo"]+sum([
+        y for x,y in unicode_char_count.items() if x.startswith("ext-")
+    ])
 
     return (cjk_char_count, unicode_char_count)
 
