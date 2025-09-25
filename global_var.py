@@ -48,7 +48,8 @@ cjk_list = {"gb2312":"GB/T 2312",
             "hkchangyong":"List of Graphemes of Commonly-Used Chinese Characters", #常用字字形表
             "hkscs":"Hong Kong Supplementary Character Set",
             "suppchara":"Common Supplementary Characters in Hong Kong (Level 1-6)",
-            "iicore":"IICore"
+            "iicore":"IICore",
+            "jf7000-normal": "jf7000 Character Pack Basic"
            }
 
 #english name
@@ -71,7 +72,8 @@ cjk_fan_list_en = {"4808changyong":"Chart of Standard Forms of Common National C
                 "hkchangyong":"List of Graphemes of Commonly-Used Chinese Characters",
                 "hkscs":"Hong Kong Supplementary Character Set",
                 "suppchara":"Common Supplementary Characters in Hong Kong (Level 1-6)",
-                "gb12345":"GB/T 12345"
+                "gb12345":"GB/T 12345",
+                "jf7000-normal":"jf7000 Basic Charset"
                }
 unicode_list = {"kangxi":"Kangxi Radicals",
                 "kangxi-sup":"CJK Radical Supplements",
@@ -118,7 +120,8 @@ cjk_fan_list_zhs = {"4808changyong":"常用国字标准字体表",
                 "hkchangyong":"常用字字形表",
                 "hkscs":"香港增补字符集 (HKSCS)",
                 "suppchara":"常用香港外字表 (1-6级)",
-                "gb12345":"GB/T 12345"
+                "gb12345":"GB/T 12345",
+                "jf7000-normal":"jf7000 当务字集基本包"
                }
 unicode_list_zhs = {"kangxi":"康熙部首",
                 "kangxi-sup":"汉字部首补充",
@@ -153,7 +156,8 @@ cjk_fan_list_zht = {"4808changyong":"常用國字標準字體表",
                 "hkchangyong":"常用字字形表",
                 "hkscs":"香港增補字符集 (HKSCS)",
                 "suppchara":"常用香港外字表 (1-6級)",
-                "gb12345":"GB/T 12345"
+                "gb12345":"GB/T 12345",
+                "jf7000-normal":"jf7000 當務字集基本包"
                }
 cjk_jian_fan_list_zht = {"hanyi-jianfan":"漢儀簡繁字表",
                      "fangzheng-jianfan":"方正簡繁字表",
@@ -211,7 +215,8 @@ cjk_count = {"gb2312":6763,
             "hkchangyong":4825,
             "hkscs":4603,
             "suppchara":1102,
-            "iicore":9810
+            "iicore":9810,
+            "jf7000-normal":6373
            }
 unicode_count = {"kangxi":214,
                 "kangxi-sup":115,
