@@ -1,5 +1,5 @@
 import sys
-from typing import Self
+from typing import cast, TypedDict
 from pathlib import Path
 from enum import StrEnum
 import frontmatter
@@ -53,10 +53,21 @@ class CJKGroup(StrEnum):
     JIANFAN = "jianfan"
     FAN = "fan"
 
+class FontMatterNames(TypedDict):
+    en: str
+    zhs: str
+    zht: str
+
+
+class FrontMatterMetadata(TypedDict):
+    name: FontMatterNames
+    cjk_group: str
+    count: int
+
 
 class CJKTable:
     def __init__(
-        self, id: str, localised_names: str, cjk_group: CJKGroup, characters: set[str]
+        self, id: str, localised_names: FontMatterNames, cjk_group: CJKGroup, characters: set[str]
     ):
         self.id = id
         self.localised_names = localised_names
@@ -82,16 +93,20 @@ class CJKTable:
         return self.characters.difference(other)
 
     @staticmethod
-    def load(filename: Path) -> Self:
+    def load(filename: Path) -> "CJKTable":
         id = filename.stem.removesuffix("-han")
         with open(filename, "r", encoding="utf-8-sig") as f:
-            metadata, content = frontmatter.parse(f.read())
+            raw_metadata, content = frontmatter.parse(f.read())
+            metadata: FrontMatterMetadata = cast(FrontMatterMetadata, raw_metadata)
             characters = set(map(str.strip, content.strip().splitlines()))
             try:
-                localised_names: dict = metadata["name"]
+                localised_names: FontMatterNames = metadata["name"]
                 cjk_group: str = metadata["cjk_group"]
             except KeyError:
-                localised_names = {lang: filename.stem for lang in DisplayLanguage}
+                localised_names = cast(
+                    FontMatterNames,
+                    {lang: filename.stem for lang in DisplayLanguage},
+                )
                 cjk_group = "unknown"
             try:
                 count: int = metadata["count"]
@@ -273,7 +288,7 @@ class DisplayCJKTablesList:
 
 
 class DisplayUnicodeBlocksList:
-    block_list: dict[str, CJKTable] = {
+    block_list: dict[str, UnicodeBlock] = {
         "ZERO": CJK_ZERO_BLOCK,
         "__NON_COMPATIBILITY_(UNIFIED)_IDEOGRAPHS": CJK_NON_COMPATIBILITY_IDEOGRAPHS,
     }

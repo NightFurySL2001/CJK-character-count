@@ -1,6 +1,6 @@
 fonttools >= 4.60
 pyglet == 1.5.31 # load custom TC fonts
 pyperclip >= 1.11.0
-pyinstaller >= 6.17.0
+pyinstaller >= 6.22.3
 python-frontmatter >= 1.1.0
-unicode_blocks_py == 17.0.0
+unicode_blocks_py == 18.0.0

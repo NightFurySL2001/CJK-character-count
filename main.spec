@@ -1,11 +1,21 @@
 # -*- mode: python ; coding: utf-8 -*-
 
+import sys
+from pathlib import Path
 
+project_dir = Path(SPECPATH)
 a = Analysis(
-    ['main.py'],
+    [str(project_dir / 'main.py')],
     pathex=[],
     binaries=[],
-    datas=[("cjk-tables/*.txt","cjk-tables"), ("readme.txt","."), ("LICENSE","."), ("appicon.ico","."), ("GenYoGothicTW-R.ttf","."), ("cjk-char-header.ttf",".")],
+    datas=[
+        (str(project_dir / "cjk-tables" / "*.txt"), "cjk-tables"),
+        (str(project_dir / "readme.txt"), "."),
+        (str(project_dir / "LICENSE"), "."),
+        (str(project_dir / "appicon.ico"), "."),
+        (str(project_dir / "GenYoGothicTW-R.ttf"), "."),
+        (str(project_dir / "cjk-char-header.ttf"), "."),
+    ],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
@@ -25,14 +35,14 @@ exe = EXE(
     bootloader_ignore_signals=False,
     strip=False,
     upx=True,
-    icon="appicon.ico",
+    icon=str(project_dir / "appicon.ico"),
     console=False,
     disable_windowed_traceback=False,
     argv_emulation=False,
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    # Use old one dir format
+    # Keep runtime data beside the executable for the existing resource lookup.
     contents_directory='.',
 )
 coll = COLLECT(
@@ -44,12 +54,15 @@ coll = COLLECT(
     upx_exclude=[],
     name='main',
 )
-app = BUNDLE(exe,
-         name='main.app',
-         icon=None,
-         bundle_identifier=None,
-         info_plist={
+
+if sys.platform == 'darwin':
+    app = BUNDLE(
+        exe,
+        name='main.app',
+        icon=None,
+        bundle_identifier=None,
+        info_plist={
             'NSPrincipalClass': 'NSApplication',
             'NSAppleScriptEnabled': False,
-            },
-         )
+        },
+    )

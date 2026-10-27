@@ -2,6 +2,9 @@ Made by NightFurySL2001 / 夜煞之乐2001
 Released under MIT License
 Copyright © 2020-2025 NFSL2001
 
+2026-10-28 v0.50.1
+Update unicode-blocks-py to 18.0
+
 2025-11-27 v0.50
 Standardise counting table format and ordering
 Allow custom table load by adding new text file
